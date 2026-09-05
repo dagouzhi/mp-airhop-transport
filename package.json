@@ -1,7 +1,7 @@
 {
   "name": "@htyf-mp/airhop-transport",
-  "version": "0.2.0",
-  "description": "Raw-byte BLE, LAN, Wi-Fi Aware and optional WebRTC transports for React Native",
+  "version": "0.2.1",
+  "description": "Raw-byte BLE, LAN, Wi-Fi Aware and WebRTC transports for React Native",
   "source": "src/index.ts",
   "main": "lib/commonjs/index.js",
   "module": "lib/module/index.js",
@@ -12,11 +12,6 @@
       "types": "./lib/typescript/index.d.ts",
       "react-native": "./src/index.ts",
       "default": "./lib/commonjs/index.js"
-    },
-    "./webrtc": {
-      "types": "./lib/typescript/webrtc/index.d.ts",
-      "react-native": "./src/webrtc/index.ts",
-      "default": "./lib/commonjs/webrtc/index.js"
     },
     "./package.json": "./package.json"
   },
@@ -41,7 +36,6 @@
   "packageManager": "yarn@1.22.22",
   "publishConfig": { "access": "public" },
   "peerDependencies": { "react": ">=18", "react-native": ">=0.76", "react-native-webrtc": ">=124" },
-  "peerDependenciesMeta": { "react-native-webrtc": { "optional": true } },
   "dependencies": {
     "@noble/ciphers": "^1.3.0",
     "@noble/curves": "^1.9.0",

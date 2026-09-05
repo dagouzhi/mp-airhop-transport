@@ -4,8 +4,7 @@
     "strict": true,
     "noUncheckedIndexedAccess": true,
     "paths": {
-      "@htyf-mp/airhop-transport": ["../lib/typescript/index.d.ts"],
-      "@htyf-mp/airhop-transport/webrtc": ["../lib/typescript/webrtc/index.d.ts"]
+      "@htyf-mp/airhop-transport": ["../lib/typescript/index.d.ts"]
     }
   },
   "include": ["App.tsx", "src/**/*.ts"]

@@ -1,5 +1,4 @@
-// Optional WebRTC entry point. Keeping it outside the root module lets Metro
-// bundle BLE-only applications without resolving react-native-webrtc.
+// Public WebRTC exports collected here so the package root remains a stable API.
 
 export { AirhopWebRTCTransport } from "./webrtc-transport";
 export type { AirhopWebRTCTransportOptions } from "./webrtc-transport";

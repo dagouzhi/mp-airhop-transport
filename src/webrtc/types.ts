@@ -1,5 +1,5 @@
-// Public WebRTC contracts. They intentionally avoid leaking react-native-webrtc
-// classes so the base package can be imported when that optional peer is absent.
+// Public WebRTC contracts avoid leaking react-native-webrtc classes into the
+// package API, which keeps callers decoupled from that dependency's internals.
 
 export type WebRTCDescription = {
   type: "offer" | "answer";

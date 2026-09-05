@@ -16,3 +16,5 @@ export { NoiseHandshake } from "./secure/noise-xx";
 export type { NoiseRole, NoiseSession } from "./secure/noise-xx";
 export { canEncrypt, generateRatchetKeyPair, initReceiver, initSender, ratchetDecrypt, ratchetEncrypt } from "./secure/double-ratchet";
 export type { MessageHeader, RatchetKeyPair, RatchetState } from "./secure/double-ratchet";
+export { AirhopSignalingAdapter, AirhopWebRTCTransport, DEFAULT_WEBRTC_CHUNK_BYTES, decodeWebRTCFrame, frameWebRTCMessage } from "./webrtc";
+export type { AirhopSignalingAdapterOptions, AirhopWebRTCTransportOptions, BinarySignalingChannel, WebRTCConfiguration, WebRTCFactory, WebRTCSignal, WebRTCSignalEvent, WebRTCSignalingAdapter, WebRTCSignalingSubscription, WebRTCTransportEvent, WebRTCTransportSubscription } from "./webrtc";

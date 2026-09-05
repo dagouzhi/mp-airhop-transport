@@ -2,7 +2,7 @@
 
 [简体中文](./README.md) | [English](./README.en.md)
 
-React Native 原始字节通信包，提供 BLE、同一局域网 LAN、Wi-Fi Aware 和可选 WebRTC DataChannel 链路。
+React Native 原始字节通信包，提供 BLE、同一局域网 LAN、Wi-Fi Aware 和 WebRTC DataChannel 链路。
 
 ## 能力
 
@@ -22,14 +22,14 @@ npm install @htyf-mp/airhop-transport
 cd ios && pod install
 ```
 
-WebRTC 是可选能力。需要文本、文件或公网点对点传输时，由宿主显式安装原生依赖：
+WebRTC API 直接从主包导出，宿主需要同时安装它的原生 peer dependency：
 
 ```sh
-npm install react-native-webrtc
+npm install @htyf-mp/airhop-transport react-native-webrtc
 cd ios && pod install
 ```
 
-只使用 BLE、LAN 或 Wi-Fi Aware 的宿主不需要安装 `react-native-webrtc`。WebRTC 不能在 Expo Go 中运行，需要 development build 或正式原生构建。
+WebRTC 不能在 Expo Go 中运行，需要 development build 或正式原生构建。
 
 iOS 宿主需在 `Info.plist` 提供蓝牙和本地网络用途说明，并声明 `_airhop-lan-v1._tcp` Bonjour 服务。启用 iOS Wi-Fi Aware 时还需配置相应 entitlement 和 `_airhop-mesh-v1._tcp` 服务。Android manifest 权限自动合并，运行时权限仍由宿主 App 请求。
 
@@ -63,7 +63,7 @@ WebRTC 的 offer、answer 和 ICE candidate 必须通过另一条信令路径交
 import {
   AirhopSignalingAdapter,
   AirhopWebRTCTransport,
-} from "@htyf-mp/airhop-transport/webrtc";
+} from "@htyf-mp/airhop-transport";
 
 const signaling = new AirhopSignalingAdapter({
   // sendSignalBytes 和 subscribeSignalBytes 由宿主实现。生产环境必须

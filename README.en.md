@@ -2,7 +2,7 @@
 
 [简体中文](./README.md) | [English](./README.en.md)
 
-A raw-byte transport library for React Native, providing BLE, local-network LAN, Wi-Fi Aware, and optional WebRTC DataChannel links.
+A raw-byte transport library for React Native, providing BLE, local-network LAN, Wi-Fi Aware, and WebRTC DataChannel links.
 
 ## Capabilities
 
@@ -22,14 +22,14 @@ npm install @htyf-mp/airhop-transport
 cd ios && pod install
 ```
 
-WebRTC is optional. Install its native peer explicitly when the app needs text, file, or internet peer-to-peer transfer:
+The WebRTC API is exported directly from the package root. Install its native peer dependency alongside the package:
 
 ```sh
-npm install react-native-webrtc
+npm install @htyf-mp/airhop-transport react-native-webrtc
 cd ios && pod install
 ```
 
-Apps that only use BLE, LAN, or Wi-Fi Aware do not need `react-native-webrtc`. WebRTC is unavailable in Expo Go and requires a development build or a native production build.
+WebRTC is unavailable in Expo Go and requires a development build or a native production build.
 
 The iOS host must provide Bluetooth and local-network usage descriptions in `Info.plist` and declare the `_airhop-lan-v1._tcp` Bonjour service. Enabling iOS Wi-Fi Aware also requires its entitlement and the `_airhop-mesh-v1._tcp` service declaration. Android manifest permissions are merged automatically, but the host app must still request runtime permissions.
 
@@ -63,7 +63,7 @@ WebRTC offer, answer, and ICE candidates must travel over a separate signaling p
 import {
   AirhopSignalingAdapter,
   AirhopWebRTCTransport,
-} from "@htyf-mp/airhop-transport/webrtc";
+} from "@htyf-mp/airhop-transport";
 
 const signaling = new AirhopSignalingAdapter({
   // The host implements these functions. Production code must authenticate

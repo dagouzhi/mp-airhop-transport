@@ -2,15 +2,13 @@ import "react-native-get-random-values";
 
 import {
   AirhopTransport,
+  AirhopSignalingAdapter,
+  AirhopWebRTCTransport,
   WiFiAwarePairing,
   type WiFiPairingMode,
   type TransportKind,
   type TransportSubscription,
 } from "@htyf-mp/airhop-transport";
-import {
-  AirhopSignalingAdapter,
-  AirhopWebRTCTransport,
-} from "@htyf-mp/airhop-transport/webrtc";
 import { StatusBar } from "expo-status-bar";
 import { useEffect, useMemo, useRef, useState } from "react";
 import {

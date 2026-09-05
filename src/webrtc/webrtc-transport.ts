@@ -304,7 +304,7 @@ function toArrayBuffer(bytes: Uint8Array): ArrayBuffer {
 function loadDefaultFactory(): WebRTCFactory {
   let module: unknown;
   try { module = require("react-native-webrtc"); }
-  catch { throw new Error("Airhop WebRTC requires the optional react-native-webrtc peer dependency"); }
+  catch { throw new Error("Airhop WebRTC requires the react-native-webrtc peer dependency"); }
   const ctor = (module as { RTCPeerConnection?: new (configuration: WebRTCConfiguration) => WebRTCPeerConnectionLike }).RTCPeerConnection;
   if (!ctor) throw new Error("react-native-webrtc does not export RTCPeerConnection");
   return { createPeerConnection: (configuration) => new ctor(configuration) };
